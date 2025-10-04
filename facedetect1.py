@@ -12,10 +12,13 @@ except:
 
 path = os.path.dirname(__file__)
 os.chdir(path)
+
 haarfile = cv2.data.haarcascades + "haarcascade_frontalface_default.xml"
 facedetector = cv2.CascadeClassifier(haarfile) #加载脸部级联分类器
+
 print("Open camera,please wait...",end="")
 cam = cv2.VideoCapture(0) #打开摄像头
+
 if not cam.isOpened():
     print("\nCamera not found")
 else:
@@ -27,7 +30,7 @@ else:
             print("cam.read() 错误") #显示错误信息并退出
             break
         gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY) #转换为灰度
-        faces = facedetector.detectMultiScale(gray, 1.1, 5) #检测脸部
+        faces = facedetector.detectMultiScale(gray, 1.1, 5) #检测脸部 
         for (x, y, w, h) in faces: #枚举所有脸
             roi_face = image[y:y+h, x:x+w].copy() #切分出脸部图像
             cv2.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2) #在脸部四周画绿框
