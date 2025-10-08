@@ -8,4 +8,4 @@
 
 5.flask库，flaskweb.py,打开浏览器输出helloworld
 
-6.openai库，llmtest1.py，用的暑假买着玩的deepseekapi
+6.openai库，llmtest1.py，用的暑假买着玩的deepseekapi，llmtest2.py用了web网页，可以自己输入提示词
