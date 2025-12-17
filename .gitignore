@@ -5,3 +5,4 @@ __pycache__/
 *.caffemodel
 *.prototxt
 synsetwords.txt
+mnist_train.csv
